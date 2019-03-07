@@ -2,16 +2,18 @@
 The purpose of the guide is to understand how to get React to seamlessly integrate with the Spring framework
 
 ## Getting Started
-To get started, fork this repository _repository_<br>
-This repository has a starter branch, and a completed branch. We'll be on the starter branch
+To get started, fork this repository. <br>
+We start with a starter branch, and a completed branch. <br> We'll be on the starter branch
 
 ### Get the project on your computer
-Begin by cloning your foked repository
+Begin by cloning your forked repository
 
 - Navigate to where you want the project to live
-- Run `git clone _repository_` to create a folder named `react-spring`
-- Go into `repository` with `cd repository`
-- Ensure that you are on the `starter` branch by executing `git branch`. <br>
+- Run `git clone WHATEVER_YOUR_FORKED_REPO_URL_IS` to create a folder named `react-spring`
+- Go into `react-spring/` with `cd react-spring`
+- Ensure that you are on the `starter` branch by executing `git branch`.
+
+<br>
 Feel free to look at the `completed` branch at anytime, but ensure that you commit any changes to `starter` before running `git checkout completed`
 
 ### Create the React content
@@ -24,23 +26,26 @@ _Side Note_ -> This guide assumes basic familiarity with React. Ensure that `cre
 - Run `npm run start` to ensure that the React App was installed correctly
     - The `frontend/` app runs on `http://localhost:3000`
 <br>
+
 Our React app is now running. Swell. Now to configure the proxy for development
 
 #### Configuration
-By default, our app running on `http://localhost:30000` will not communicate with our backend. 
+By default, our app running on `http://localhost:30000` will not communicate with our backend due to them not being on the same port.
 <br>
-For more information on `CORS`, check out this link.
+
+For more information on `CORS`, check out [this link](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS).
 <br>
+
 For our purposes, we are going to proxy requests. This essentially _tricks_ Spring into thinking the requests are coming from itself
 <br>
 - In the `frontend/` directory, find and open the `package.json` file
 - Anywhere in the file (preferably towards the bottom), add the line `"proxy": "http://localhost:8080"`
     - Ensure that you put a comma after this line
-- This will proxy and `fetch()` requests to the port our Spring application is running on
+- This will proxy all `fetch()` requests to the port our Spring application is running on
     - If you want to run your Spring application on a different port, change the above to the desired port
 <hr>
 
-### Spring Configuraton
+### Spring Configuration 
 This project is loaded without a `JPA` dependancy. If using MySQL, follow _this_ guide
 
 #### Setup
@@ -70,39 +75,39 @@ The current view of our application will be as follows
 root:
 ```
 react-spring
-	|_.idea <-- (if using IntelliJ)
-	|_.mvn
-	|_frontend/
-		|_build/
-			|_Dont worry about it
-		|_node_modules/
-			|_Dont worry about it
-		|_public/
-			|_index.html
-			|_manifest.json
-		|_src/
-			|_App.css
-			|_App.js
-			|_App.test.js
-			|_index.css
-			|_index.js
-			|_serviceWorker.js
-		|_.gitignore
-		|_.package.json
-		|_.package-lock.json
-		|_README.md
-	|_src/
-		|_main/
-			|_java/
-				|_com
-					|_reactsping
-						|_ReactSpringApplication.java
-			|_resources/
-				|_static/
-				|_templates/
-				|_application.properties
-				|_example.properties
-		|_test/
+  |_.idea <-- (if using IntelliJ)
+  |_.mvn
+  |_frontend/
+    |_build/
+     |_Dont worry about it
+    |_node_modules/
+     |_Dont worry about it
+    |_public/
+     |_index.html
+     |_manifest.json
+    |_src/
+     |_App.css
+      |_App.js
+      |_App.test.js
+      |_index.css
+      |_index.js
+      |_serviceWorker.js
+	|_.gitignore
+	|_.package.json
+  	|_.package-lock.json
+  	|_README.md
+  |_src/
+   |_main/
+    |_java/
+     |_com
+      |_reactsping
+       |_ReactSpringApplication.java
+        |_resources/
+         |_static/
+          |_templates/
+           |_application.properties
+           |_example.properties
+	|_test/
 	|_target/
 	|_.gitignore
 	|_mvnw
@@ -150,8 +155,10 @@ Just like any other request handler, we will build Controllers for categories of
 - Inside of `componentDidMount(){...}`, make a get request, `axios.get("/api/test")`
 - This lifecycle will run after the component has mounted. Lifecycle hooks are *extremely important*. Learn more about them _here_
 - This returns a promise, which must be handled in one of 2 ways
-    - The 1st is using `async / await` syntax. For more on that, checkout this _link_
+    - The 1st is using `async / await` syntax. For more on that, checkout [this link](https://javascript.info/async-await)
     - The syntax we will use is traditional promises with `.then()` and `.catch()`
+    <br>
+    
 - To start, we will just handle the response with `.console.log()`
     - That looks like `axios.get("/api/test").then(res => console.log(res)).catch(error => console.log(error))`
     - We're taking advantage of arrow functions, which do not need parenthesis with a single argument, nor a curly brace function body if a single expression is used
