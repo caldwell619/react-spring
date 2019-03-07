@@ -141,24 +141,24 @@ Here comes what is often the most frustrating but simultaneously awesome feature
 - If making a `GET` request, the syntax will be `axios.get()`
 - Subsequent `HTTP` methods follow, subtituting `.get()`
 
-### Spring Route Handlers
+## Spring Route Handlers
 Just like any other request handler, we will build Controllers for categories of requests
 
-#### Setup a test request in React
+### Setup a test request in React
 - From the `frontend/` directory, run `npm i -S axios`
     - The `i` is install, the `-S` flag saves the package requirement to `package.json`, which allows future developers to `npm install` based on what we declare as a dependency
-- In `App.js`, at the top of the file, you will find the import statements
+- At the top of `App.js`, you will find the import statements
 - Follow the syntax and `import axios from 'axios';`
     - `axios` is now an object with several methods attached to it as properties
-- declare a method on the class called `componentDidMount(){...}`
+- Declare a method on the class called `componentDidMount(){...}`
     - This method is a lifecycle hook, inherited from `React.Component`
-- Inside of `componentDidMount(){...}`, make a get request, `axios.get("/api/test")`
 - This lifecycle will run after the component has mounted. Lifecycle hooks are *extremely important*. Learn more about them _here_
+- Inside of `componentDidMount(){...}`, make a get request, `axios.get("/api/test")`
 - This returns a promise, which must be handled in one of 2 ways
     - The 1st is using `async / await` syntax. For more on that, checkout [this link](https://javascript.info/async-await)
     - The syntax we will use is traditional promises with `.then()` and `.catch()`
     <br>
-    
+    <hr>
 - To start, we will just handle the response with `.console.log()`
     - That looks like `axios.get("/api/test").then(res => console.log(res)).catch(error => console.log(error))`
     - We're taking advantage of arrow functions, which do not need parenthesis with a single argument, nor a curly brace function body if a single expression is used
@@ -167,7 +167,7 @@ Just like any other request handler, we will build Controllers for categories of
 - Notice how we do not need to call `res.json()` & `.then(data => console.log(data))`
     - `axios` does this for us. If you know what's happening behind the scenes and how to do it without `axios`, good. If not, learn `fetch()`
 
- #### Setup the Controller in Spring
+ ### Setup the Controller in Spring
  We need to setup a way for Spring to understand and be listening for requests
 
  - From the root, navigate to the `reactspring/` directory with `cd src/main/java/com/reactspring/`
@@ -193,10 +193,10 @@ public class TestController {
 ```
 <br>
 
-#### Making Sense of the Response
+### Making Sense of the Response
 If everything worked correct, you should see an object in the console representing a successfull response
 
-###### Properties of the Response Object 
+##### Properties of the Response Object 
 - `config`
     - Everything our request sent to the server
 - `data` 
