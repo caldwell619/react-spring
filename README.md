@@ -46,7 +46,7 @@ For our purposes, we are going to proxy requests. This essentially _tricks_ Spri
 <hr>
 
 ### Spring Configuration 
-This project is loaded without a `JPA` dependancy. If using MySQL, follow _this_ guide
+This project is loaded without a `JPA` dependency. If using MySQL, follow _this_ guide
 
 #### Setup
 - Ensure that there are no processes running on `http://localhost:8080`
