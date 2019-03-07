@@ -68,6 +68,7 @@ After ensuring Spring is working, we need to make the `JAR` file to run
 - To run the build, ensure that port 8080 is not in use with the above commands
 - Run `java -jar YOUR_JAR_FILE` with the `JAR` file being what was previously outputted and copied
 <br>
+
 This will result in `http://localhost:8080` running Spring, serving your React code, which is just the boilerplate that comes with `create-react-app`
 
 ## Current File Structure
