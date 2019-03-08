@@ -20,6 +20,7 @@ After forking, go to your own GitHub, and copy the key to clone the project from
 - Ensure that you are on the `starter` branch by executing `git branch`.
 
 <br>
+
 Feel free to look at the `completed` branch at anytime, but ensure that you commit any changes to `starter` before running `git checkout completed`
 
 ### Create the React content
