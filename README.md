@@ -119,6 +119,9 @@ react-spring
 ## Housekeeping
 At this point, we can delete some of the boilerplate that comes with `create-react-app`.<br>
 You can go into `App.js` and delete the `JSX` in the `return()` statement. This is the entry point into your React application for development purposes.
+<br> 
+
+You can also delete the `css` files, or keep them. It's up to you. We will be importing `css` later, but do what makes you happy with the generated files.
 <hr>
 
 # Development
@@ -128,11 +131,11 @@ Now begins the development of your application. Lets start with the general flow
 
 ### Start React Dev Server
 - Navigate from root to `frontend/` --> `cd frontend/`
-- Run `npm run start` to begin serving on port 3000
+- Run `npm run start` to begin serving on `http://localhost:3000`
 - Make changes to the code, saving refreshes the page
 
 ### Start Spring Server
-- From IntelliJ, click the green play button to start serving Spring on port 8080
+- From IntelliJ, click the green play button to start serving Spring on `http://localhost:8080`
 - Normal flow from here. If you make changes, you must stop and rerun the server to recompile the code
 
 ## Communication between React and Spring in Development
@@ -192,6 +195,7 @@ public class TestController {
     }
 }
 ```
+
 <br>
 
 ### Making Sense of the Response
