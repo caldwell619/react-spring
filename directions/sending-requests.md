@@ -34,12 +34,9 @@ state = {
         title: "",
         description: "",
         price: "",
-        user: {id: 1},
         categories: []
     };
 ```
-We're hardcoding in the user value for now. Kinda seems off that we need to make it an object, but remember our mystical friend, Spring, is looking for a `User` class as part of an `Ad` entity.
-
 
 ### Don't reinvent the wheel
 I know what you're thinking. Bootstrap sucks! I can make designs way better than that. Yes, you can. Great. However, `CSS` frameworks help you move quickly through prototyping, and even in production.
@@ -68,4 +65,51 @@ import Fab from '@material-ui/core/Fab'
 import Input from '@material-ui/core/Input'
 import NavigationIcon from '@material-ui/icons/Navigation'
 ```
-At this point, you can choose to build out your own layout, or just use [this one]()
+At this point, you can choose to build out your own layout, or just use [this one](https://github.com/caldwell619/react-spring/blob/fdfb98a24e8b60e3be38f687532a29460c68d56c/frontend/src/Components/Ad.js#L43).
+
+Make the project your own, if you'd like. This is more about learning how to interact.
+
+### Setting State `onChange()`
+You'll notice every component from `Material-UI` has a `value`, and a `onChange` property. This is because React handles input with [one-way binding](https://stackoverflow.com/questions/34519889/can-anyone-explain-the-difference-between-reacts-one-way-data-binding-and-angula).
+- `onChange()` accepts `this.handleInput('type')` as an argument. `handleInput` is the method we defined previously, and the function argument of `'type'` refers to what we want out function to get passed
+- After you have configured the `onChange()` methods, be sure to add a `value={this.state.x}` so the Component knows what to render, and our `post` request knows what to send
+
+### Sending the request
+We're almost ready to send our Ad to Spring. The suspense is killing me.
+
+
+We still need a method to run when we click the "Sell Stuff!" button. Also, `Material-UI` pushes the value of the category into an array, which is then set to `state.categories`.
+<br>
+
+If we try to send a normal array to Spring, representative of the categories, it will keel over. So, we need to turn our categories array, into an object Spring will understand
+#### createAd Method
+- Define a method `createAd`, which does the following:
+```$xslt
+createAd = () => {
+        let adsCat = [...this.state.categories].map(cat => {
+            return {id: cat}
+        });
+        axios.post("/api/create-ad", {
+            user: {id: 1},
+            title: this.state.title,
+            description: this.state.description,
+            price: this.state.price,
+            categories: adsCat
+        })
+            .catch(error => console.log(error))
+    };
+```
+We're hardcoding in the user value for now. Kinda seems off that we need to make it an object, but remember our mystical friend, Spring, is looking for a `User` class as part of an `Ad` entity.
+
+
+Notice a few interesting things about the `request body` which comes right after the `URL`. The `categories` array, is now an array of objects, with one property `id`, storing the `id`.
+
+#### Executing the Request
+Now to wire this up to a button. I'm on pins and needles.
+- For this example, I put the `onClick` listener on the `Fab` ( button ) component
+- `onClick` will execute immediate if you call the function inside the curly braces. 
+    - **DO NOT** do this: `onClick={this.createAd()}`
+    - **DO THIS** `onClick={this.createAd}`
+    - `this` refers to the class `Ad`, and `.createAd` is a property which holds a function
+- Ensure that there are no errors in the console, then check the database. You should have an ad that's auto filling the relational table specefied
+
