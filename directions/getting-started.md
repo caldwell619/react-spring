@@ -131,3 +131,6 @@ You can go into `App.js` and delete the `JSX` in the `return()` statement. This 
 
 You can also delete the `css` files, or keep them. It's up to you. We will be importing `css` later, but do what makes you happy with the generated files.
 <hr>
+
+## Next Step
+Your mission, should you choose to accept it, is to proceed to [Testing](https://github.com/caldwell619/react-spring/blob/completed/directions/testing.md).
