@@ -6,14 +6,22 @@ To get started, fork this repository. <br>
 We start with a starter branch, and a completed branch. <br> We'll be on the starter branch
 
 ### Get the project on your computer
-Begin by cloning your forked repository
+Begin by cloning your forked repository. Click the button towards the top right that says _Fork_
+<br>
+
+Forking a repository makes an exact copy ( different from cloning ) with the same branches on it, just living on your GitHub
+<br>
+
+After forking, go to your own GitHub, and copy the key to clone the project from **your own** repository
 
 - Navigate to where you want the project to live
-- Run `git clone WHATEVER_YOUR_FORKED_REPO_URL_IS` to create a folder named `react-spring`
-- Go into `react-spring/` with `cd react-spring`
-- Ensure that you are on the `starter` branch by executing `git branch`.
+- Run `git clone WHATEVER_YOUR_FORKED_REPO_CLONE_URL_IS` to create a folder named `react-spring`
+- Go into `react-spring/` with `cd react-spring` 
+- If you'd like to keep the `starter` branch the way it is, checkout onto your own branch, calling it whatever you'd like -> `git checkout -b MY_DESIRED_BRANCH_NAME` 
+- If you don't care, edit `starter` directly
 
 <br>
+
 Feel free to look at the `completed` branch at anytime, but ensure that you commit any changes to `starter` before running `git checkout completed`
 
 ### Create the React content
@@ -47,8 +55,10 @@ For our purposes, we are going to proxy requests. This essentially _tricks_ Spri
 
 ### Spring Configuration 
 This project is loaded without a `JPA` dependency. If using MySQL, follow _this_ guide
+<br>
 
 #### Setup
+- To install the proper plugin for Spring to load React, follow [this guide](https://github.com/caldwell619/react-spring/blob/starter/npm-dependency.md)
 - Ensure that there are no processes running on `http://localhost:8080`
     - Run `lsof -i :8080` to see what is running on that port. Empty return means nothing is running
     - To kill processes on that port, run the following commands:
@@ -62,7 +72,7 @@ This project is loaded without a `JPA` dependency. If using MySQL, follow _this_
 After ensuring Spring is working, we need to make the `JAR` file to run
 - From the root `react-spring`, run the command `mvn clean install`
     - This command wipes the target folder, then re-runs our entire build script
-    - This process will complie the Java, create a build pack of React, and package them into one `JAR` file
+    - This process will compile the Java, create a build pack of React, and package them into one `JAR` file
 - After a successful build, find the location of the `JAR` file that was just created
     - From the root, run `find target -name \*.jar` -> copy the output
 - To run the build, ensure that port 8080 is not in use with the above commands
