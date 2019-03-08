@@ -2,14 +2,16 @@
 The purpose of the guide is to understand how to get React to seamlessly integrate with the Spring framework
 
 ## Getting Started
-To get started, fork this repository. <br>
-We start with a starter branch, and a completed branch. <br> We'll be on the starter branch
+To get started, fork this repository. 
+<br>
+
+We begin our journey with a `starter` branch, and a `completed` branch. <br> We'll be on the starter branch
 
 ### Get the project on your computer
 Begin by cloning your forked repository. Click the button towards the top right that says _Fork_
 <br>
 
-Forking a repository makes an exact copy ( different from cloning ) with the same branches on it, just living on your GitHub
+Forking _( different from cloning )_ a repository makes an exact copy with the same branches on it, just living on your GitHub
 <br>
 
 After forking, go to your own GitHub, and copy the key to clone the project from **your own** repository
@@ -17,8 +19,8 @@ After forking, go to your own GitHub, and copy the key to clone the project from
 - Navigate to where you want the project to live
 - Run `git clone WHATEVER_YOUR_FORKED_REPO_CLONE_URL_IS` to create a folder named `react-spring`
 - Go into `react-spring/` with `cd react-spring` 
-- If you'd like to keep the `starter` branch the way it is, checkout onto your own branch, calling it whatever you'd like -> `git checkout -b MY_DESIRED_BRANCH_NAME` 
-- If you don't care, edit `starter` directly
+- If you'd like to keep the `starter` branch the way it is, checkout onto your own branch, calling it whatever you'd like -> `git checkout -b MY_FABULOUS_BRANCH_NAME` 
+- If you're a barbarian and don't care, edit `starter` directly
 
 <br>
 
@@ -47,7 +49,7 @@ For more information on `CORS`, check out [this link](https://developer.mozilla.
 For our purposes, we are going to proxy requests. This essentially _tricks_ Spring into thinking the requests are coming from itself
 <br>
 - In the `frontend/` directory, find and open the `package.json` file
-- Anywhere in the file (preferably towards the bottom), add the line `"proxy": "http://localhost:8080"`
+- Anywhere in the file ( preferably towards the bottom ), add the line `"proxy": "http://localhost:8080"`
     - Ensure that you put a comma after this line
 - This will proxy all `fetch()` requests to the port our Spring application is running on
     - If you want to run your Spring application on a different port, change the above to the desired port
@@ -153,10 +155,10 @@ Here comes what is often the most frustrating but simultaneously awesome feature
 - We will be making use of `fetch()` methods to request data from our Spring backend
 - We will be using a library called `axios` to serve as the `fetch()` method
 - If making a `GET` request, the syntax will be `axios.get()`
-- Subsequent `HTTP` methods follow, subtituting `.get()`
+- Subsequent `HTTP` methods follow, substituting `.get()`
 
 ## Spring Route Handlers
-Just like any other request handler, we will build Controllers for categories of requests
+Just like any other request handler, we need to build Controllers for categories of requests
 
 ### Setup a test request in React
 - From the `frontend/` directory, run `npm i -S axios`
@@ -168,7 +170,7 @@ Just like any other request handler, we will build Controllers for categories of
     - This method is a lifecycle hook, inherited from `React.Component`
 - This lifecycle will run after the component has mounted. Lifecycle hooks are *extremely important*. Learn more about them _here_
 - Inside of `componentDidMount(){...}`, make a get request, `axios.get("/api/test")`
-- This returns a promise, which must be handled in one of 2 ways
+- This returns a promise, which must be handled one of 2 ways
     - The 1st is using `async / await` syntax. For more on that, checkout [this link](https://javascript.info/async-await)
     - The syntax we will use is traditional promises with `.then()` and `.catch()`
     <br>
@@ -210,7 +212,7 @@ public class TestController {
 
 
 ### Making Sense of the Response
-If everything worked correct, you should see an object in the console representing a successfull response
+If everything worked correct, you should see an object in the console representing a successful response
 
 ##### Properties of the Response Object 
 - `config`
