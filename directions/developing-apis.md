@@ -2,7 +2,7 @@
 This guide is to further flesh out the process of building the REST Controllers
 
 ## Adding a database
-Add this dependency to the `pom.xml` file
+Add this dependency to the `pom.xml` file. It allows us to use all the wild annotations we are going to need. It also requires we configure a database in `applications.properties`
 
 ```
 <dependency>
