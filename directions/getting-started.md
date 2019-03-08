@@ -23,6 +23,7 @@ Feel free to look at the `completed` branch at anytime, but ensure that you comm
 
 ## Create the React content
 For the purposes of development, React and Spring will be completely separate
+
 _Side Note_ -> This guide assumes basic familiarity with React. Ensure that `create-react-app` is globally installed with `npm i -g create-react-app`.
 <br>
 ### Installation
