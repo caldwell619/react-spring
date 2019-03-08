@@ -72,8 +72,10 @@ After ensuring Spring is working, we need to make the `JAR` file to run
     - This process will compile the Java, create a build pack of React, and package them into one `JAR` file
 - After a successful build, find the location of the `JAR` file that was just created
     - From the root, run `find target -name \*.jar` -> copy the output
+    - It will be `target/react-spring-0.0.1-SNAPSHOT.jar` if following this naming convention
 - To run the build, ensure that port 8080 is not in use with the above commands
 - Run `java -jar YOUR_JAR_FILE` with the `JAR` file being what was previously outputted and copied
+    - `java -jar target/react-spring-0.0.1-SNAPSHOT.jar` <-- if following project naming
 <br>
 
 This will result in `http://localhost:8080` running Spring, serving your React code, which is just the boilerplate that comes with `create-react-app`
