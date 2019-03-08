@@ -22,7 +22,7 @@ After forking, go to your own GitHub, and copy the key to clone the project from
 
 <br>
 
-Feel free to look at the `completed` branch at anytime, but ensure that you commit any changes to `starter` before running `git checkout completed`
+Feel free to look at the `completed` branch at anytime, but ensure that you commit any changes to `starter` before running `git checkout completed` and ensure that you run `npm install` from the `frontend/` directory
 
 ### Create the React content
 For the purposes of development, React and Spring will be completely separate
