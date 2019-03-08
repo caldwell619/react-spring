@@ -113,3 +113,5 @@ Now to wire this up to a button. I'm on pins and needles.
     - `this` refers to the class `Ad`, and `.createAd` is a property which holds a function
 - Ensure that there are no errors in the console, then check the database. You should have an ad that's auto filling the relational table specefied
 
+## We made it
+Finally we are sending user generated data to a Spring REST API. I'm so proud of you.
