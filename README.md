@@ -180,7 +180,9 @@ Just like any other request handler, we will build Controllers for categories of
  - Make a public method, annotated by `@GetMapping("/api/test")` that returns a simple string to see if we are connected
  <br>
  The controller should look like this:
+ 
  ```
+ 
  package com.reactspring.Controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
