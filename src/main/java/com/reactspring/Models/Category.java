@@ -1,33 +1,43 @@
 package com.reactspring.Models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name="categories")
+@Table(name = "categories")
 public class Category {
-        @Id
-        @GeneratedValue
-        private long id;
+    // ------------------------------------ Defining Data Types ---------------------------------------------- //
+    @Id
+    @GeneratedValue
+    private long id;
 
-        @Column(nullable = false)
-        private String name;
+    @Column(nullable = false)
+    private String name;
 
-        @ManyToMany(mappedBy = "categories")
-        @JsonBackReference
-        private List<Ad> ads;
+    @ManyToMany(mappedBy = "categories")
+    @JsonBackReference
+    private List<Ad> ads;
 
-        public Category(){}
+    // ------------------------------------ Constructors ---------------------------------------------- //
 
-        public Category(String name, List<Ad> ads) {
-            this.name = name;
-            this.ads = ads;
-        }
-        public Category(String id) {
+    // JPA
+    public Category() { }
+
+
+    public Category(String name, List<Ad> ads) {
+        this.name = name;
+        this.ads = ads;
+    }
+
+
+    public Category(String id) {
         this.id = Long.parseLong(id);
     }
+
+
+
+    // ------------------------------------ Getter / Setter ---------------------------------------------- //
 
     public long getId() {
         return id;

@@ -1,14 +1,13 @@
 package com.reactspring.Models;
-import org.springframework.data.annotation.Id;
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name="ads")
+@Table(name = "ads")
 public class Ad {
     @Id
     @GeneratedValue
-    private long id;
+    private Long id;
     @Column
     private String title;
     @Column
@@ -25,10 +24,9 @@ public class Ad {
     )
     private List<Category> categories;
 
-    // empty constructor to make JPA work
-    public Ad(long id) { }
 
-    // constructor for accepting JSON Ad object - all String args
+    protected Ad(){ }
+
     public Ad(String title, String description, String price, User user, List<Category> categories) {
         this.title = title;
         this.description = description;
@@ -37,12 +35,37 @@ public class Ad {
         this.categories = categories;
     }
 
-    public long getId() {
+
+    public Ad(String title, String description, String price, List<Category> categories) {
+        this.title = title;
+        this.description = description;
+        this.price = price;
+        this.categories = categories;
+    }
+
+
+    public Ad(long id, String title, String description, String price, User user, List<Category> categories) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.price = price;
+        this.user = user;
+        this.categories = categories;
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
+    }
+
+    public User getUser() {
+        return this.user;
+    }
+    public void setUser(User user){
+        this.user = user;
     }
 
     public String getTitle() {
@@ -67,14 +90,6 @@ public class Ad {
 
     public void setPrice(String price) {
         this.price = price;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 
     public List<Category> getCategories() {
