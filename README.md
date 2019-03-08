@@ -196,7 +196,6 @@ public class TestController {
 }
 ```
 
-<br>
 
 ### Making Sense of the Response
 If everything worked correct, you should see an object in the console representing a successfull response
