@@ -6,7 +6,7 @@ We start with a starter branch, and a completed branch. <br> We'll be on the sta
 Begin by cloning your forked repository. Click the button towards the top right that says _Fork_
 <br>
 
-Forking a repository makes an exact copy ( different from cloning ) with the same branches on it, just living on your GitHub
+Forking a repository ( different from cloning ) makes an exact copy with the same branches on it, just living on your GitHub
 <br>
 
 After forking, go to your own GitHub, and copy the key to clone the project from **your own** repository
