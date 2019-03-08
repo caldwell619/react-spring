@@ -5,6 +5,7 @@ import java.util.List;
 @Entity
 @Table(name = "ads")
 public class Ad {
+    // ---------------------------------------- Defining Data Types ---------------------------------------- //
     @Id
     @GeneratedValue
     private Long id;
@@ -24,34 +25,11 @@ public class Ad {
     )
     private List<Category> categories;
 
+    // -------------------------------- Black Magic Constructor ---------------------------------------- //
 
     protected Ad(){ }
 
-    public Ad(String title, String description, String price, User user, List<Category> categories) {
-        this.title = title;
-        this.description = description;
-        this.price = price;
-        this.user = user;
-        this.categories = categories;
-    }
-
-
-    public Ad(String title, String description, String price, List<Category> categories) {
-        this.title = title;
-        this.description = description;
-        this.price = price;
-        this.categories = categories;
-    }
-
-
-    public Ad(long id, String title, String description, String price, User user, List<Category> categories) {
-        this.id = id;
-        this.title = title;
-        this.description = description;
-        this.price = price;
-        this.user = user;
-        this.categories = categories;
-    }
+    // ---------------------------------------- Getter / Setter ---------------------------------------- //
 
     public Long getId() {
         return id;

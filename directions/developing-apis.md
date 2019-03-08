@@ -18,6 +18,6 @@ Add this dependency to the `pom.xml` file
 In order for Spring to do its witchcraft, annotations must be everywhere
 
 ### Ads
-The most important part of this process is having constructors that accept strings
+I recommend you look [here]()
 
  
