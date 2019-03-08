@@ -55,7 +55,7 @@ This project is loaded without a `JPA` dependency. If using MySQL, follow _this_
 <br>
 
 ### Setup
-- To install the proper plugin for Spring to load React, follow [this guide](https://github.com/caldwell619/react-spring/blob/starter/npm-dependency.md)
+- To install the proper plugin for Spring to load React, follow [this guide](https://github.com/caldwell619/react-spring/blob/completed/directions/npm-dependency.md)
 - Ensure that there are no processes running on `http://localhost:8080`
     - Run `lsof -i :8080` to see what is running on that port. Empty return means nothing is running
     - To kill processes on that port, run the following commands:

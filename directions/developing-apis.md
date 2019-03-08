@@ -27,6 +27,15 @@ I recommend you look [here](https://github.com/caldwell619/react-spring/blob/com
 Refer to the [curriculum](https://java.codeup.com/spring/fundamentals/repositories/) for a more detailed explanation
 <br>
 
+In this step, we also create a `util/` package, in which our `Password.java` will be executed. The dependency for the password hashing is:
+```$xslt
+<dependency>
+    <groupId>org.mindrot</groupId>
+    <artifactId>jbcrypt</artifactId>
+    <version>0.4</version>
+</dependency>
+``` 
+
 ##### Highlights:
 - Spring maps the relationships between the different class properties for you. 
 - All you need is an empty constructor, and Spring will do the rest. <- Rest, lol. Get it?
