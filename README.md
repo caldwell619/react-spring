@@ -46,7 +46,7 @@ For our purposes, we are going to proxy requests. This essentially _tricks_ Spri
 <hr>
 
 ### Spring Configuration 
-This project is loaded without a `JPA` dependancy. If using MySQL, follow _this_ guide
+This project is loaded without a `JPA` dependency. If using MySQL, follow _this_ guide
 
 #### Setup
 - Ensure that there are no processes running on `http://localhost:8080`
@@ -68,6 +68,7 @@ After ensuring Spring is working, we need to make the `JAR` file to run
 - To run the build, ensure that port 8080 is not in use with the above commands
 - Run `java -jar YOUR_JAR_FILE` with the `JAR` file being what was previously outputted and copied
 <br>
+
 This will result in `http://localhost:8080` running Spring, serving your React code, which is just the boilerplate that comes with `create-react-app`
 
 ## Current File Structure
@@ -118,6 +119,9 @@ react-spring
 ## Housekeeping
 At this point, we can delete some of the boilerplate that comes with `create-react-app`.<br>
 You can go into `App.js` and delete the `JSX` in the `return()` statement. This is the entry point into your React application for development purposes.
+<br> 
+
+You can also delete the `css` files, or keep them. It's up to you. We will be importing `css` later, but do what makes you happy with the generated files.
 <hr>
 
 # Development
@@ -127,11 +131,11 @@ Now begins the development of your application. Lets start with the general flow
 
 ### Start React Dev Server
 - Navigate from root to `frontend/` --> `cd frontend/`
-- Run `npm run start` to begin serving on port 3000
+- Run `npm run start` to begin serving on `http://localhost:3000`
 - Make changes to the code, saving refreshes the page
 
 ### Start Spring Server
-- From IntelliJ, click the green play button to start serving Spring on port 8080
+- From IntelliJ, click the green play button to start serving Spring on `http://localhost:8080`
 - Normal flow from here. If you make changes, you must stop and rerun the server to recompile the code
 
 ## Communication between React and Spring in Development
@@ -176,7 +180,9 @@ Just like any other request handler, we will build Controllers for categories of
  - Make a public method, annotated by `@GetMapping("/api/test")` that returns a simple string to see if we are connected
  <br>
  The controller should look like this:
+ 
  ```
+ 
  package com.reactspring.Controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -191,7 +197,7 @@ public class TestController {
     }
 }
 ```
-<br>
+
 
 ### Making Sense of the Response
 If everything worked correct, you should see an object in the console representing a successfull response
