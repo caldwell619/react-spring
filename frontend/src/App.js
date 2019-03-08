@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import Ad from './Components/Ad';
 
 class App extends Component {
-  componentDidMount(){
-        axios.get("/api/test").then(res => console.log(res))
-            .catch(error => console.log(error))
-  }
   render() {
     return (
-      <h1>Doing stuff</h1>
+      <Ad/>
     );
   }
 }
