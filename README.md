@@ -15,6 +15,7 @@ Forking a repository makes an exact copy ( different from cloning ) with the sam
 After forking, go to your own GitHub, and copy the key to clone the project from **your own** repository
 
 - Navigate to where you want the project to live
+- Checkout onto your own branch, whatever you'd like to call it (`git checkout -b MY_DESIRED_BRANCH_NAME`), if you'd like to keep `starter` the way it is. If you don't care, edit `starter` directly
 - Run `git clone WHATEVER_YOUR_FORKED_REPO_CLONE_URL_IS` to create a folder named `react-spring`
 - Go into `react-spring/` with `cd react-spring`
 - Ensure that you are on the `starter` branch by executing `git branch`.
