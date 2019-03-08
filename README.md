@@ -6,10 +6,16 @@ To get started, fork this repository. <br>
 We start with a starter branch, and a completed branch. <br> We'll be on the starter branch
 
 ### Get the project on your computer
-Begin by cloning your forked repository
+Begin by cloning your forked repository. Click the button towards the top right that says _Fork_
+<br>
+
+Forking a repository makes an exact copy ( different from cloning ) with the same branches on it, just living on your GitHub
+<br>
+
+After forking, go to your own GitHub, and copy the key to clone the project from *your own* repository
 
 - Navigate to where you want the project to live
-- Run `git clone WHATEVER_YOUR_FORKED_REPO_URL_IS` to create a folder named `react-spring`
+- Run `git clone WHATEVER_YOUR_FORKED_REPO_CLONE_URL_IS` to create a folder named `react-spring`
 - Go into `react-spring/` with `cd react-spring`
 - Ensure that you are on the `starter` branch by executing `git branch`.
 
